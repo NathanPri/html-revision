@@ -5,3 +5,21 @@ $('.nav-item').click(function (event) {
     $('.nav-item').removeClass('active');
     $(this).addClass('active');
 });
+
+// Effet apparition texte lettre par lettre
+// Trim enlève les espaces au début et à la fin
+// de la chaine
+var word = $('#tap-text').text().trim();
+
+// On vide la div qui contient le mot
+$('#tap-text').empty();
+
+// Parcourir les lettres du mot
+for (let i = 0; i < word.length; i++) {
+    console.log(word[i]);
+
+    setTimeout(function () {
+        console.log(i);
+        $('#tap-text').append(word[i]);
+    }, 300 * i);
+}
